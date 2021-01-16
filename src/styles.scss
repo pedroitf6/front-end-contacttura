@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.background{
+    animation: color-change-3x 4s linear infinite alternate both;
+    }
+    
+    @keyframes color-change-3x {
+        0% {
+          background: #19dcea;
+        }
+        50% {
+          background: #2235db;
+        }
+        100% {
+          background: #242121;
+        }
+      }
+      
