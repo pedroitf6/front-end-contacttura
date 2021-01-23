@@ -1,44 +1,56 @@
-<div><app-navigation-bar></app-navigation-bar></div>
-    
-<div class="conteudo">
-    
-    <!--- <div class="search_box">
-                
-        <input type="text" class="search_text"
-        placeholder="Digite o nome que você procura !">
+<app-navigation-bar></app-navigation-bar>
+
+  
+<section>
+  <div class="title_contacts">
+    <h1>Contatos</h1>
+  </div>
+  <div class="button_new_contacts button_primary_color">
+    <button mat-raised-button color="primary" routerLink="/contacts-create-edit">Novo Contato</button>
+  </div>
+</section>
+
+<section>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Fone</th>
+          <th>menu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection.data">
+          <th data-label="Nome">{{item.nome}}</th>
+          <td data-label="Email">{{item.email}}</td>
+          <td data-label="Fone">{{item.fone}}</td>
+          <td data-label="Menu">
+            <div class="button_check_color">
+              <button class="buttons-first-position" mat-raised-button color="accent">Excluir</button>
+              <button mat-raised-button color="accent">Editar</button>
+            </div>
+          </td>
+
+
+
+        </tr>
         
-        <a class="search_bottom" href="#">
-
-        </a>
+      </tbody>
+    </table>
+    <div class="pagination-position">
+      <pagination-controls [maxSize]="maxSize" 
+                          [directionLinks]="directionLinks" 
+                          [responsive]="responsive" 
+                          [previousLabel]="labels.previousLabel" 
+                          [nextLabel]="labels.nextLabel" 
+                          (pageChange)="onPageChange($event)"></pagination-controls>
     </div>
-    --->
-    <div class="titulo">Contatos</div>
-    <div>
-        <button class="button" href="#">Novo Contato</button>
-    </div>
-
-    <table id="customers">
-        <tr>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Telefone</th>
-          <th></th>
-        </tr>
-        <tr>
-        <tr>
-          <td>Pedro Tavares</td>
-          <td>pedro@gmail.com</td>
-          <td>81996859014</td>
-          <td>
-            <button class="buttonDelete" href="#">Deletar</button>
-            <button class="buttonEdit" href="#">Editar</button>
-        </td>
-        </tr>
-      </table>
-      
-
-</div>
 
 
+  </div>
 
+  
+</section>
 

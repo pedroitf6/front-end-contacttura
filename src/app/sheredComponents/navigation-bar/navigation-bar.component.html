@@ -8,16 +8,17 @@
         </span>
         <!-- Menu responsivo para web(Minima de 769px)-->
         
-
-        <div class="logo">Contacttura</div>
-       
+        <a href="#">
+            <img src="../../../assets/img/logo-noobsFuctura-navbar.png" class="logo">
+          </a>
+       <!-- <span class="font-style"><img src="../../login/logo-noobsFuctura.png"></span>   -->  
 
         <ul class="main-nav" id="desktop-menu">
             <li>
-                <a routerLink="/contacts-create-edit" class="nav-links">Contatos</a>
+                <a routerLink="/contacts-list" class="nav-links">Contatos</a>
             </li>
-            <li>
-                <a routerLink="/users-create-edit" class="nav-links">Usuários</a>
+            <li *ngIf="admin != 'false'">
+                <a routerLink="/users-list" class="nav-links">Usuários</a>
             </li>
             <li>
                 <a routerLink="/login" class="nav-links">Logout</a>

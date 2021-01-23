@@ -1,21 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*html, body { height: 100%; }*/
 
-.background{
-    animation: color-change-3x 4s linear infinite alternate both;
-    }
-    
-    @keyframes color-change-3x {
-        0% {
-          background: #19dcea;
-        }
-        50% {
-          background: #2235db;
-        }
-        100% {
-          background: #242121;
-        }
-      }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
       
+.button_register .mat-raised-button.mat-warn{
+ background-color: #28a745;
+}
+
+.button_register .mat-raised-button.mat-primary{
+  background-color: #007bff;
+}

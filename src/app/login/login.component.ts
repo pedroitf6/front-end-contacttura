@@ -2,6 +2,9 @@ import { Component, OnInit, ɵSWITCH_TEMPLATE_REF_FACTORY__POST_R3__ } from '@an
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import {ErrorStateMatcher} from '@angular/material/core';
+
+
 
 @Component({
   selector: 'app-login',
@@ -11,17 +14,25 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    usernameFormControl: new FormControl('', [Validators.required, Validators.email]),
+    passwordFormControl: new FormControl('', [Validators.required]),
   });
 
-  constructor(public router: Router) { }
+  usernameFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  constructor(public router: Router) {
+    console.log('login');
+  }
 
   ngOnInit(): void {
   }
 
   login(){
     if (this.loginForm.valid){
+      localStorage.setItem('token', 'futurasupertope');
+      localStorage.setItem('admin', 'true');
       this.router.navigate(['/contacts-list']);
     }
     else{

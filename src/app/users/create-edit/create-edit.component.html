@@ -1,1 +1,49 @@
 <app-navigation-bar></app-navigation-bar>
+
+<section>
+    <div class="title-new-user">
+        <h1>
+            Cadastrar Novo Usuário
+        </h1>
+    </div>
+</section>
+
+<section>
+    <form [formGroup]="createEditForm">
+        <div class="grid-container">
+            <div class="grid-item">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+            </div>
+            <div class="grid-item">
+                
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Profile</mat-label>
+                    <input matInput formControlName="profile">
+                </mat-form-field>
+            </div>
+            <div class="grid-item">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+            </div>
+
+            <div class="grid-item">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="grid-container-button button_primary_color">
+            <button mat-raised-button color="primary" (click)="createUser()">Novo Usuário</button>
+        </div>
+    </form>
+</section>
